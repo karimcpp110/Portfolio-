@@ -5,6 +5,7 @@ import RemoteCursors from "@/components/realtime/remote-cursors";
 import EasterEggs from "@/components/easter-eggs";
 import ElasticCursor from "@/components/ui/ElasticCursor";
 import RadialMenu from "@/components/radial-menu/index";
+import TerminalDiagnostics from "@/components/terminal-diagnostics";
 
 export default function AppOverlays() {
   return (
@@ -17,6 +18,7 @@ export default function AppOverlays() {
       <EasterEggs />
       <ElasticCursor />
       <RadialMenu />
+      <TerminalDiagnostics />
     </>
   );
 }

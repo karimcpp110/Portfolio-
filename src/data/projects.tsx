@@ -1,49 +1,46 @@
-import AceTernityLogo from "@/components/logos/aceternity";
-import SlideShow from "@/components/slide-show";
 import { Button } from "@/components/ui/button";
 import { TypographyH3, TypographyP } from "@/components/ui/typography";
-import { ArrowUpRight, ExternalLink, Link2, MoveUpRight } from "lucide-react";
-import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { ReactNode } from "react";
 import { RiNextjsFill, RiNodejsFill, RiReactjsFill } from "react-icons/ri";
 import {
-  SiChakraui,
+  SiCplusplus,
   SiDocker,
   SiExpress,
   SiFirebase,
+  SiFlask,
   SiJavascript,
   SiMongodb,
+  SiMysql,
+  SiPhp,
   SiPostgresql,
-  SiPrisma,
   SiPython,
-  SiReactquery,
-  SiSanity,
-  SiShadcnui,
   SiSocketdotio,
-  SiSupabase,
+  SiStreamlit,
   SiTailwindcss,
   SiThreedotjs,
   SiTypescript,
-  SiVuedotjs,
+  SiArduino,
 } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
-const BASE_PATH = "/assets/projects-screenshots";
 
-const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
+const ProjectsLinks = ({ live, repo }: { live?: string; repo?: string }) => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-start gap-3 my-3 mb-8">
-      <Link
-        className="font-mono underline flex gap-2"
-        rel="noopener"
-        target="_new"
-        href={live}
-      >
-        <Button variant={"default"} size={"sm"}>
-          Visit Website
-          <ArrowUpRight className="ml-3 w-5 h-5" />
-        </Button>
-      </Link>
+      {live && (
+        <Link
+          className="font-mono underline flex gap-2"
+          rel="noopener"
+          target="_new"
+          href={live}
+        >
+          <Button variant={"default"} size={"sm"}>
+            Visit Website
+            <ArrowUpRight className="ml-3 w-5 h-5" />
+          </Button>
+        </Link>
+      )}
       {repo && (
         <Link
           className="font-mono underline flex gap-2"
@@ -68,17 +65,17 @@ export type Skill = {
   icon: ReactNode;
 };
 const PROJECT_SKILLS = {
+  react: {
+    title: "React.js",
+    bg: "black",
+    fg: "white",
+    icon: <RiReactjsFill />,
+  },
   next: {
     title: "Next.js",
     bg: "black",
     fg: "white",
     icon: <RiNextjsFill />,
-  },
-  chakra: {
-    title: "Chakra UI",
-    bg: "black",
-    fg: "white",
-    icon: <SiChakraui />,
   },
   node: {
     title: "Node.js",
@@ -86,17 +83,41 @@ const PROJECT_SKILLS = {
     fg: "white",
     icon: <RiNodejsFill />,
   },
+  cpp: {
+    title: "C++",
+    bg: "black",
+    fg: "white",
+    icon: <SiCplusplus />,
+  },
   python: {
     title: "Python",
     bg: "black",
     fg: "white",
     icon: <SiPython />,
   },
-  prisma: {
-    title: "prisma",
+  js: {
+    title: "JavaScript",
     bg: "black",
     fg: "white",
-    icon: <SiPrisma />,
+    icon: <SiJavascript />,
+  },
+  ts: {
+    title: "TypeScript",
+    bg: "black",
+    fg: "white",
+    icon: <SiTypescript />,
+  },
+  php: {
+    title: "PHP",
+    bg: "black",
+    fg: "white",
+    icon: <SiPhp />,
+  },
+  mysql: {
+    title: "MySQL",
+    bg: "black",
+    fg: "white",
+    icon: <SiMysql />,
   },
   postgres: {
     title: "PostgreSQL",
@@ -116,29 +137,11 @@ const PROJECT_SKILLS = {
     fg: "white",
     icon: <SiExpress />,
   },
-  reactQuery: {
-    title: "React Query",
+  firebase: {
+    title: "Firebase",
     bg: "black",
     fg: "white",
-    icon: <SiReactquery />,
-  },
-  shadcn: {
-    title: "ShanCN UI",
-    bg: "black",
-    fg: "white",
-    icon: <SiShadcnui />,
-  },
-  aceternity: {
-    title: "Aceternity",
-    bg: "black",
-    fg: "white",
-    icon: <AceTernityLogo />,
-  },
-  tailwind: {
-    title: "Tailwind",
-    bg: "black",
-    fg: "white",
-    icon: <SiTailwindcss />,
+    icon: <SiFirebase />,
   },
   docker: {
     title: "Docker",
@@ -146,69 +149,23 @@ const PROJECT_SKILLS = {
     fg: "white",
     icon: <SiDocker />,
   },
-  yjs: {
-    title: "Y.js",
-    bg: "black",
-    fg: "white",
-    icon: (
-      <span>
-        <strong>Y</strong>js
-      </span>
-    ),
-  },
-  firebase: {
-    title: "Firebase",
-    bg: "black",
-    fg: "white",
-    icon: <SiFirebase />,
-  },
-  sockerio: {
+  socketio: {
     title: "Socket.io",
     bg: "black",
     fg: "white",
     icon: <SiSocketdotio />,
   },
-  js: {
-    title: "JavaScript",
+  tailwind: {
+    title: "Tailwind",
     bg: "black",
     fg: "white",
-    icon: <SiJavascript />,
+    icon: <SiTailwindcss />,
   },
-  ts: {
-    title: "TypeScript",
-    bg: "black",
-    fg: "white",
-    icon: <SiTypescript />,
-  },
-  vue: {
-    title: "Vue.js",
-    bg: "black",
-    fg: "white",
-    icon: <SiVuedotjs />,
-  },
-  react: {
-    title: "React.js",
-    bg: "black",
-    fg: "white",
-    icon: <RiReactjsFill />,
-  },
-  sanity: {
-    title: "Sanity",
-    bg: "black",
-    fg: "white",
-    icon: <SiSanity />,
-  },
-  spline: {
-    title: "Spline",
+  threejs: {
+    title: "Three.js",
     bg: "black",
     fg: "white",
     icon: <SiThreedotjs />,
-  },
-  gsap: {
-    title: "GSAP",
-    bg: "black",
-    fg: "white",
-    icon: "",
   },
   framerMotion: {
     title: "Framer Motion",
@@ -216,13 +173,26 @@ const PROJECT_SKILLS = {
     fg: "white",
     icon: <TbBrandFramerMotion />,
   },
-  supabase: {
-    title: "Supabase",
+  streamlit: {
+    title: "Streamlit",
     bg: "black",
     fg: "white",
-    icon: <SiSupabase />,
+    icon: <SiStreamlit />,
+  },
+  flask: {
+    title: "Flask",
+    bg: "black",
+    fg: "white",
+    icon: <SiFlask />,
+  },
+  arduino: {
+    title: "Arduino",
+    bg: "black",
+    fg: "white",
+    icon: <SiArduino />,
   },
 };
+
 export type Project = {
   id: string;
   category: string;
@@ -232,466 +202,251 @@ export type Project = {
   skills: { frontend: Skill[]; backend: Skill[] };
   content: React.ReactNode | any;
   github?: string;
-  live: string;
+  live?: string;
 };
+
 const projects: Project[] = [
   {
-    id: "codingducks",
-    category: "Coding platform",
-    title: "Coding Ducks",
-    src: "/assets/projects-screenshots/codingducks/landing.png",
+    id: "talky",
+    category: "Enterprise Messaging",
+    title: "TALKY",
+    src: "/assets/projects-screenshots/talky/landing.png",
     screenshots: ["landing.png"],
     skills: {
       frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.chakra,
-        PROJECT_SKILLS.reactQuery,
-        PROJECT_SKILLS.firebase,
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.js,
+        PROJECT_SKILLS.tailwind,
+        PROJECT_SKILLS.framerMotion,
       ],
       backend: [
+        PROJECT_SKILLS.cpp,
         PROJECT_SKILLS.node,
-        PROJECT_SKILLS.express,
-        PROJECT_SKILLS.prisma,
-        PROJECT_SKILLS.python,
-        PROJECT_SKILLS.postgres,
-        PROJECT_SKILLS.sockerio,
+        PROJECT_SKILLS.socketio,
+        PROJECT_SKILLS.docker,
       ],
     },
-    live: "https://www.codingducks.xyz/",
-    github: "https://github.com/Naresh-Khatri/Coding-Ducks",
+    live: "",
+    github: "https://github.com/karimcpp110/whatsdown",
     get content() {
       return (
         <div>
           <TypographyP className="font-mono text-2xl text-center">
-            Coding ducks = LeetCode + CodePen + CSS Battles
+            Enterprise Messaging = WhatsApp + Telegram, Built From Scratch
           </TypographyP>
-          <TypographyP className="font-mono ">
-            Coding Ducks is your coding dojo — where you level up your skills,
-            battle in real-time code duels, and earn badges like a true code
-            warrior. Track your progress, flex your brain, and climb the
-            leaderboard. Ready to quack the code?
+          <TypographyP className="font-mono">
+            TALKY is an enterprise-grade, high-performance hybrid messaging
+            platform combining the best of WhatsApp and Telegram. Built with
+            a C++ backend for raw speed and a React frontend for premium UI,
+            it features end-to-end encryption, real-time WebSocket
+            communication, and a security-first architecture.
           </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">Problems </TypographyH3>
-          <p className="font-mono mb-2">
-            Solve coding problems similar to LeetCode, enhancing your
-            problem-solving skills across various languages.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/codingducks/problems.png`,
-              `${BASE_PATH}/codingducks/problem.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Ducklets</TypographyH3>
-          <p className="font-mono mb-2">
-            Collaborate in real-time with others in a multiplayer coding
-            environment, just like CodePen but with a social twist.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/codingducks/ducklets.png`,
-              `${BASE_PATH}/codingducks/ducklet1.png`,
-              `${BASE_PATH}/codingducks/ducklet2.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">UI Battles </TypographyH3>
-
-          <p className="font-mono mb-2">
-            Challenge yourself to create UI components with HTML/CSS/JS, and get
-            instant feedback with an automated similarity scoring.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/codingducks/css-battles.png`,
-              `${BASE_PATH}/codingducks/css-battle.png`,
-              `${BASE_PATH}/codingducks/css-battle2.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Contests </TypographyH3>
-          <p className="font-mono mb-2">
-            Organize or participate in coding competitions. Successfully used to
-            host three contests during college.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/codingducks/contests.png`]} />
-          <TypographyH3 className="my-4 mt-8">Playground </TypographyH3>
-          <p className="font-mono mb-2">
-            Test and execute your code instantly in my versatile online code
-            runner.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/codingducks/playground.png`]} />
-          <TypographyH3 className="my-4 mt-8">Users</TypographyH3>
-
-          <p className="font-mono mb-2">
-            Track your progress, earn badges, and climb the rankings with
-            detailed user profiles and activity tracking.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/codingducks/users.png`,
-              `${BASE_PATH}/codingducks/user.png`,
-            ]}
-          />
+          <ProjectsLinks repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Architecture</TypographyH3>
+          <ul className="list-disc ml-6">
+            <li className="font-mono">C++ WebSocket server for sub-millisecond message routing</li>
+            <li className="font-mono">React frontend with real-time state synchronization</li>
+            <li className="font-mono">End-to-end encryption with custom key exchange protocol</li>
+            <li className="font-mono">Dockerized microservice deployment pipeline</li>
+          </ul>
+          <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+          <ul className="list-disc ml-6">
+            <li className="font-mono">Real-time messaging with typing indicators and read receipts</li>
+            <li className="font-mono">Group chats with admin controls and media sharing</li>
+            <li className="font-mono">Dark/light theme with glassmorphism UI</li>
+            <li className="font-mono">REST API for user management and authentication</li>
+          </ul>
         </div>
       );
     },
   },
   {
-    id: "couponluxury",
-    category: "Coupon site",
-    title: "Coupon Luxury",
-    src: "/assets/projects-screenshots/couponluxury/landing.png",
-    screenshots: ["1.png", "2.png", "3.png", "4.png", "5.png"],
-    live: "https://www.couponluxury.com/",
+    id: "chiggabot",
+    category: "Local AI Agent",
+    title: "Chiggabot",
+    src: "/assets/projects-screenshots/chiggabot/landing.png",
+    screenshots: ["landing.png"],
     skills: {
-      frontend: [
-        PROJECT_SKILLS.js,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.chakra,
-        PROJECT_SKILLS.vue,
-      ],
+      frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.js],
       backend: [
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.express,
-        PROJECT_SKILLS.prisma,
-        PROJECT_SKILLS.postgres,
+        PROJECT_SKILLS.python,
+        PROJECT_SKILLS.flask,
         PROJECT_SKILLS.docker,
       ],
     },
-    get content(): JSX.Element {
-      return (
-        <div>
-          <TypographyP className="font-mono ">
-            CouponLuxury is your go-to destination for snagging the best deals
-            without lifting a finger. Whether you&apos;re hunting for the latest
-            discounts or trying to save a buck at your favorite stores,
-            CouponLuxury&apos;s got you covered.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <p className="font-mono mb-2 mt-4">
-            As soon as you land, boom! You&apos;re greeted with the freshest
-            coupons and top-tier deals that&apos;ll make your wallet happy.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/couponluxury/landing.png`]} />
-          <TypographyH3 className="my-4 ">Stores</TypographyH3>
-          <p className="font-mono mb-2">
-            Dive into a comprehensive list of stores, each packed with exclusive
-            deals and discounts. It&apos;s like having a VIP pass to every sale
-            in town.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/couponluxury/stores.png`,
-              `${BASE_PATH}/couponluxury/store.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Categories</TypographyH3>
-
-          <p className="font-mono mb-2">
-            Whatever you&apos;re into—fashion, tech, food—you&apos;ll find it
-            neatly organized here. No more endless scrolling; just pick a
-            category and get the best offers instantly.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/couponluxury/categories.png`]} />
-          <TypographyH3 className="my-4 mt-8">Custom CMS </TypographyH3>
-          <p className="font-mono mb-2">
-            Powered by Vue.js, this bad boy allows us to keep the content
-            dynamic and up-to-date. From flash sales to limited-time offers, my
-            CMS ensures everything&apos;s live and relevant.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/couponluxury/cms-1.png`,
-              `${BASE_PATH}/couponluxury/cms-2.png`,
-            ]}
-          />
-          <p className="font-mono mb-2 mt-5">
-            Plus, I&apos;ve sprinkled in some extra magic like personalized
-            deal recommendations, user-friendly search features, and a sleek,
-            responsive design that works like a charm on any device.
-          </p>
-          <p className="font-mono mb-2">
-            CouponLuxury isn&apos;t just a website; it&apos;s your personal deal-hunting
-            assistant, ensuring you never miss out on a bargain!
-          </p>
-          {/* <TypographyP className="my-4 mt-8">
-          <strong>Misc:</strong>
-          Hosted not one, not two, but THREE coding contests (Codemacha) during
-          college. Safe to say, Coding Ducks passed the vibe check.
-        </TypographyP>
-        <TypographyP className="my-4 mt-8">
-          <strong>Target Audience:</strong>
-          For all the novice coders out there ready to make their mark.
-        </TypographyP> */}
-        </div>
-      );
-    },
-  },
-  {
-    id: "the-booking-desk",
-    category: "Travel",
-    title: "The Booking Desk",
-    src: "/assets/projects-screenshots/the-booking-desk/landing.png",
-    screenshots: ["1.png"],
-    live: "https://thebookingdesk.com/",
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.aceternity,
-        PROJECT_SKILLS.tailwind,
-      ],
-      backend: [PROJECT_SKILLS.sanity],
-    },
+    live: "",
     get content() {
       return (
         <div>
-          <TypographyP className="font-mono ">
-            The Booking Desk is your ultimate travel consultation hub, designed
-            to turn your wanderlust dreams into reality. With a focus on smooth
-            and visually captivating animations, navigating the site feels like
-            a breeze—it&apos;s almost as if the destinations are calling you.
+          <TypographyP className="font-mono text-2xl text-center">
+            Zero Subscriptions. Full Intelligence. Local Hardware.
           </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <p className="font-mono mb-2 mt-8">
-            A sleek, modern interface greets you, featuring the latest travel
-            tips, deals, and must-visit spots around the globe.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/the-booking-desk/landing.png`]} />
-          <TypographyH3 className="my-4 mt-8">Blogs</TypographyH3>
-          <p className="font-mono mb-2">
-            Dive into the curated articles written by travel experts. Whether
-            you&apos;re looking for hidden gems or travel hacks, our blog section has
-            you covered.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/the-booking-desk/blogs.png`,
-              `${BASE_PATH}/the-booking-desk/blog.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Sanity CMS</TypographyH3>
-
-          <p className="font-mono mb-2">
-            Keeping everything fresh and up-to-date, I&apos;ve integrated Sanity CMS
-            to manage all the content with ease, ensuring you always get the
-            latest and greatest information.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/the-booking-desk/cms-1.png`,
-              `${BASE_PATH}/the-booking-desk/cms-2.png`,
-            ]}
-          />
-          <p className="font-mono mb-2 my-8">
-            With a stunning 100% score on Lighthouse, The Booking Desk isn&apos;t
-            just beautiful—it&apos;s built to perform. Whether you&apos;re planning your
-            next adventure or just daydreaming, our site delivers a top-notch
-            experience that&apos;s both informative and enjoyable.
-          </p>
+          <TypographyP className="font-mono">
+            Chiggabot is a high-performance, subscription-free AI agent running
+            entirely on local hardware. Powered by Ollama with real-time web
+            access via RAG, it features an unfiltered personality, text-to-speech
+            capabilities, and a custom knowledge pipeline. No cloud dependency,
+            no API costs, no limits.
+          </TypographyP>
+          <ProjectsLinks />
+          <TypographyH3 className="my-4 mt-8">Capabilities</TypographyH3>
+          <ul className="list-disc ml-6">
+            <li className="font-mono">Local LLM inference via Ollama — zero subscription cost</li>
+            <li className="font-mono">Real-time web search and RAG knowledge augmentation</li>
+            <li className="font-mono">Text-to-speech with personality-driven voice synthesis</li>
+            <li className="font-mono">Custom prompt engineering for unfiltered responses</li>
+          </ul>
         </div>
       );
     },
   },
   {
-    id: "portfolio",
-    category: "Portfolio",
-    title: "My Portfolio",
-    src: "/assets/projects-screenshots/portfolio/landing.png",
-    screenshots: ["1.png"],
-    live: "http://nareshkhatri.vercel.app",
-    github:"https://github.com/Naresh-Khatri/Portfolio",
+    id: "soc-ai",
+    category: "Cybersecurity Platform",
+    title: "SOC AI Command Center",
+    src: "/assets/projects-screenshots/soc-ai/landing.png",
+    screenshots: ["landing.png"],
     skills: {
       frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.shadcn,
-        PROJECT_SKILLS.aceternity,
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.tailwind,
         PROJECT_SKILLS.framerMotion,
-        PROJECT_SKILLS.tailwind,
-        PROJECT_SKILLS.spline,
       ],
-      backend: [],
+      backend: [PROJECT_SKILLS.python, PROJECT_SKILLS.flask, PROJECT_SKILLS.docker],
     },
+    live: "",
     get content() {
       return (
         <div>
-          <TypographyP className="font-mono ">
-            Welcome to my digital playground, where creativity meets code in the
-            dopest way possible.
+          <TypographyP className="font-mono text-2xl text-center">
+            AI-Powered Threat Detection & Autonomous Remediation
           </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">
-            Beautiful 3D Objects{" "}
-          </TypographyH3>
-          <p className="font-mono mb-2">
-            Did you see that 3D keyboard modal? Yeah! I made that. That
-            interactive keyboard is being rendered in 3D on a webpage 🤯, and
-            pressing each keycap reveals a skill in a goofy way. It&apos;s like
-            typing, but make it art.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/portfolio/landing.png`,
-              `${BASE_PATH}/portfolio/skills.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 ">Space Theme</TypographyH3>
-          <p className="font-mono mb-2">
-            Dark background + floating particles = out-of-this-world cool.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/portfolio/navbar.png`]} />
-          <TypographyH3 className="my-4 mt-8">Projects</TypographyH3>
-
-          <p className="font-mono mb-2">
-            My top personal and freelance projects — no filler, all killer.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/portfolio/projects.png`,
-              `${BASE_PATH}/portfolio/project.png`,
-            ]}
-          />
-          <p className="font-mono mb-2 mt-8 text-center">
-            This site&apos;s not just a portfolio — it&apos;s a whole vibe.
-          </p>
+          <TypographyP className="font-mono">
+            A real-time Security Operations Center dashboard with AI-driven
+            threat analysis, automated incident response, and a Hyper-Drive
+            autonomous workflow engine. Integrates scikit-learn ML models for
+            anomaly detection and features a premium glassmorphism HUD interface.
+          </TypographyP>
+          <ProjectsLinks />
+          <TypographyH3 className="my-4 mt-8">Features</TypographyH3>
+          <ul className="list-disc ml-6">
+            <li className="font-mono">Real-time threat feed with ML-based severity scoring</li>
+            <li className="font-mono">Autonomous &quot;Hyper-Drive&quot; mode for zero-touch remediation</li>
+            <li className="font-mono">Interactive network topology visualization</li>
+            <li className="font-mono">Incident timeline with automated forensics reports</li>
+          </ul>
         </div>
       );
     },
   },
   {
-    id: "ghostchat",
-    category: "Anonymous chat",
-    title: "GhostChat",
-    src: "/assets/projects-screenshots/ghostchat/1.png",
-    screenshots: ["1.png", "2.png", "3.png", "4.png"],
-    live: "https://ghostchat.vercel.app",
-    github:"https://github.com/Naresh-Khatri/GhostChat",
+    id: "probcast",
+    category: "NASA Space Apps Challenge",
+    title: "ProbCast",
+    src: "/assets/projects-screenshots/probcast/landing.png",
+    screenshots: ["landing.png"],
     skills: {
-      frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.next, PROJECT_SKILLS.chakra],
-      backend: [PROJECT_SKILLS.supabase],
+      frontend: [PROJECT_SKILLS.streamlit],
+      backend: [PROJECT_SKILLS.python],
     },
+    live: "",
+    github: "https://github.com/karimcpp110/ProbCast",
     get content() {
       return (
         <div>
-          <TypographyP className="font-mono ">
-            Ghostchat is your go-to spot for sending anonymous messages without
-            leaving a trace. Powered by Supabase, it&apos;s all about keeping things
-            low-key and secure. Whether you&apos;re sharing secrets, giving feedback,
-            or just having some fun, Ghostchat ensures your identity stays
-            hidden, while your voice is heard. Say what you want, without the
-            worry.
+          <TypographyP className="font-mono text-2xl text-center">
+            Technical Team Lead @ Team Moon Walkers
           </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <SlideShow
-            images={[
-              `${BASE_PATH}/ghostchat/1.png`,
-              `${BASE_PATH}/ghostchat/2.png`,
-              `${BASE_PATH}/ghostchat/3.png`,
-              `${BASE_PATH}/ghostchat/4.png`,
-            ]}
-          />
+          <TypographyP className="font-mono">
+            Developed as the Technical Team Lead in the 2024 NASA Space Apps Challenge (independent of IEEE).
+            ProbCast transforms NASA POWER API datasets into actionable rainfall probability forecasts and
+            environmental risk assessments for event organizers across any global coordinate.
+          </TypographyP>
+          <ProjectsLinks repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Technical Stack</TypographyH3>
+          <ul className="list-disc ml-6">
+            <li className="font-mono">Streamlit interactive dashboard with real-time data viz</li>
+            <li className="font-mono">NASA POWER API integration for Earth observation data</li>
+            <li className="font-mono">Probabilistic rainfall modeling with Python scientific stack</li>
+            <li className="font-mono">Geospatial coordinate-based querying system</li>
+          </ul>
         </div>
       );
     },
   },
   {
-    id: "jra",
-    category: "Result analyzer",
-    title: "JNTUA Results Analyzer",
-    src: "/assets/projects-screenshots/jra/1.png",
-    screenshots: ["1.png"],
-    live: "https://naresh-khatri.github.io/JNTUA-result-analyser-spa/#/",
+    id: "ieee-portal",
+    category: "Web Platform",
+    title: "IEEE MIU Portal",
+    src: "/assets/projects-screenshots/ieee-portal/landing.png",
+    screenshots: ["landing.png"],
     skills: {
-      frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.vue],
+      frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.js, PROJECT_SKILLS.tailwind],
+      backend: [PROJECT_SKILLS.php, PROJECT_SKILLS.mysql],
+    },
+    live: "",
+    github: "https://github.com/karimcpp110/ieee-miu",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            A Complete University Portal — Reverse-Engineered & Rebuilt
+          </TypographyP>
+          <TypographyP className="font-mono">
+            Built from scratch after reverse-engineering the Misr International
+            University&apos;s official portal. Features a Learning Management
+            System, automated grading pipeline, event management, and
+            member dashboards. Serves the entire IEEE MIU student branch.
+          </TypographyP>
+          <ProjectsLinks repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Features</TypographyH3>
+          <ul className="list-disc ml-6">
+            <li className="font-mono">Full LMS with course management and automated grading</li>
+            <li className="font-mono">Member dashboard with event registration and tracking</li>
+            <li className="font-mono">Admin panel with analytics and content management</li>
+            <li className="font-mono">Responsive design serving 100+ active members</li>
+          </ul>
+        </div>
+      );
+    },
+  },
+  {
+    id: "gheitbot",
+    category: "AI Farming Assistant",
+    title: "GheitBot",
+    src: "/assets/projects-screenshots/gheitbot/landing.png",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.streamlit,
+        PROJECT_SKILLS.python,
+      ],
       backend: [
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.mongo,
-        PROJECT_SKILLS.express,
-        PROJECT_SKILLS.docker,
+        PROJECT_SKILLS.python,
       ],
     },
+    live: "",
+    github: "https://github.com/karimcpp110/GheitBot",
     get content() {
       return (
         <div>
-          <TypographyP className="font-mono ">
-            JNTUA Results Analyzer was a revolutionary tool designed to simplify
-            and enhance the experience of accessing academic results. It served
-            as a powerful proxy between the JNTUA university results website and
-            its users, offering a range of features that made result analysis
-            faster and more efficient. Here&apos;s what made it stand out:
+          <TypographyP className="font-mono text-2xl text-center">
+            AI-Powered Precision Farming for Egypt
           </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <SlideShow images={[`${BASE_PATH}/jra/1.png`]} />
-          <TypographyH3 className="my-4 mt-8">
-            Effortless Results Retrieval
-          </TypographyH3>
-          {/* Effortless Results Retrieval: */}
+          <TypographyP className="font-mono">
+            GheitBot is an AI assistant tailored for Egyptian farmers, providing
+            real-time agricultural intelligence. It integrates OpenWeather API,
+            scrapes localized agricultural data, and uses ML-based models (Pandas)
+            to provide crop recommendations and irrigation schedules via a
+            premium Streamlit interface.
+          </TypographyP>
+          <ProjectsLinks repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Technical Stack</TypographyH3>
           <ul className="list-disc ml-6">
-            <li className="font-mono">
-              Search all your results using a single roll number, eliminating
-              the tedious task of sifting through thousands of rows on the
-              official site.
-            </li>
-          </ul>
-          <TypographyH3 className="my-4 mt-8">Class-Wise Results:</TypographyH3>
-          <ul className="list-disc ml-6">
-            <li className="font-mono">
-              class-wise results effortlessly by entering a roll number range.
-              No more manual searches or filtering.
-            </li>
-          </ul>
-          <TypographyH3 className="my-4 mt-8">Faculty Features:</TypographyH3>
-          <ul className="list-disc ml-6">
-            <li className="font-mono">
-              Faculty members could download batch results in Excel format,
-              making administrative tasks a breeze.
-            </li>
-          </ul>
-          <TypographyH3 className="my-4 mt-8">
-            Enhanced Data Insights:
-          </TypographyH3>
-          <ul className="list-disc ml-6">
-            <li className="font-mono">
-              Each result came with additional features including:
-              <ul className="list-disc font-mono ml-6">
-                <li>
-                  <strong>CGPA Calculations: </strong>Easily track your
-                  cumulative grade point average.
-                </li>
-                <li>
-                  <strong>Charts:</strong> Visualize your academic performance
-                  with comprehensive charts.
-                </li>
-                <li>
-                  <strong>Future Projections:</strong> Get insights into
-                  potential future outcomes based on current performance.
-                </li>
-                <li>
-                  <strong> Backlog Counts: </strong>Keep track of your backlog
-                  subjects at a glance.
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <TypographyH3 className="my-4 mt-8">Performance:</TypographyH3>
-          <ul className="list-disc ml-6">
-            <li className="font-mono">
-              The application was significantly faster and more efficient than
-              the official site, providing a smoother user experience.
-            </li>
-          </ul>
-          <TypographyH3 className="my-4 mt-8">Downfall:</TypographyH3>
-          <ul className="list-disc ml-6">
-            <li className="font-mono">
-              Unfortunately, as of May 2022, the tool stopped working due to the
-              introduction of CAPTCHA on the official JNTUA results site, which
-              disrupted the seamless functionality of the app. JNTUA Results
-              Analyzer transformed the way students and faculty interacted with
-              academic results, making it a must-have tool until its unexpected
-              shutdown.
-            </li>
+            <li className="font-mono">Streamlit + Pandas for data analysis and UI</li>
+            <li className="font-mono">BeautifulSoup for localized web scraping</li>
+            <li className="font-mono">Folium for geospatial mapping of farm health</li>
+            <li className="font-mono">OpenWeather API integration for precise micro-climate alerts</li>
           </ul>
         </div>
       );

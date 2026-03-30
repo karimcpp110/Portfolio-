@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { useToast } from "./ui/use-toast";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
+import { config } from "@/data/config";
 
 const ContactForm = () => {
   const [fullName, setFullName] = React.useState("");
@@ -50,14 +51,23 @@ const ContactForm = () => {
         clearTimeout(timer);
       }, 1000);
     } catch (err) {
+      console.error("Contact Form Error:", err);
+      // Fallback to mailto link if API fails
+      const mailtoUrl = `mailto:${config.email}?subject=Contact from Portfolio&body=Full Name: ${fullName}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+      
       toast({
-        title: "Error",
-        description: "Something went wrong! Please check the fields.",
+        title: "Server Unreachable",
+        description: "Falling back to your default email client...",
         className: cn(
           "top-0 w-full flex justify-center fixed md:max-w-7xl md:top-4 md:right-4"
         ),
-        variant: "destructive",
+        variant: "default",
       });
+
+      // Delay a bit so user can see the toast
+      setTimeout(() => {
+        window.location.href = mailtoUrl;
+      }, 1500);
     }
     setLoading(false);
   };

@@ -74,6 +74,60 @@ body {
   }
 }
 
+/* ============================================================
+   TERMINAL DIAGNOSTICS OVERLAY
+   ============================================================ */
+.Terminal-diagnostics {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 260px;
+  background: rgba(4, 1, 15, 0.9);
+  backdrop-filter: blur(80px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 12px;
+  padding: 0.8rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  pointer-events: none;
+}
+
+.Terminal-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+  padding-bottom: 0.4rem;
+  color: #8b5cf6;
+  opacity: 0.8;
+}
+
+.Terminal-logs {
+  height: 70px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.log-entry {
+  opacity: 0.7;
+  animation: fade-in-up 0.3s ease-out;
+}
+
+.log-entry.success { color: #10b981; }
+.log-entry.warning { color: #f59e0b; }
+.log-entry.process { color: #06b6d4; }
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 0.7; transform: translateY(0); }
+}
+
 @layer utilities {
   .canvas-overlay-mode {
     pointer-events: none;
