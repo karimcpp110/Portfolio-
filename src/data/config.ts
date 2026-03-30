@@ -1,14 +1,14 @@
 const config = {
-  title: "Karim Wael | Systems Architect & AI Engineer",
+  title: "Karim Wael | Software Engineer & AI Systems",
   description: {
-    long: "Explore the portfolio of Karim Wael, a Systems Architect and AI Engineer building high-performance systems across C++, React, Machine Learning, and Robotics. Discover 22+ technical projects, 19 verified certifications, and a track record of leading cross-functional R&D teams.",
+    long: "Explore the portfolio of Karim Wael, a Software Engineer and AI specialist building high-performance systems across C++, React, Machine Learning, and Robotics. Discover 22+ technical projects, 19 verified certifications, and a track record of leading cross-functional R&D teams.",
     short:
-      "Karim Wael — Systems Architect & AI Engineer. 22 projects. 19 certifications. Building scalable systems & AI foundations.",
+      "Karim Wael — Software Engineer | AI Systems. 22 projects. 19 certifications. Building scalable systems & AI foundations.",
   },
   keywords: [
     "Karim Wael",
     "portfolio",
-    "systems architect",
+    "software engineer",
     "AI engineer",
     "machine learning",
     "cybersecurity",

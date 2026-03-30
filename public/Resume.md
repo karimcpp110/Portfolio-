@@ -1,5 +1,5 @@
 # Karim Wael
-**Systems Architect & AI Engineer**
+**Software Engineer | AI Systems**
 
 📧 [kwael7934@gmail.com](mailto:kwael7934@gmail.com) | 📱 01556330320 | 📍 Cairo, Egypt  
 🔗 [karimwael.dev](https://karimwael.dev) | [LinkedIn](https://www.linkedin.com/in/karim-wael-40132b360/) | [GitHub](https://github.com/karimcpp110)
@@ -7,7 +7,7 @@
 ---
 
 ### PROFESSIONAL SUMMARY
-Product-focused **Systems Architect** and **AI Engineer** with a specialization in building high-concurrency distributed systems and autonomous agents. Proven track record in leading R&D teams, bridging hardware-software gaps, and delivering data-driven solutions in competitive environments like the NASA Space Apps Challenge.
+Product-focused **Software Engineer** specializing in building scalable backend systems and AI-powered solutions. Proven track record in leading R&D teams, bridging hardware-software gaps, and delivering robust, data-driven solutions in competitive environments like the NASA Space Apps Challenge.
 
 ---
 
@@ -26,7 +26,7 @@ Product-focused **Systems Architect** and **AI Engineer** with a specialization 
 
 **R&D Co-Head** | *Sep 2025 – Present*
 *   Orchestrating technical R&D operations for the student branch, leading a cross-functional team of 30+ students.
-*   Architecting the **IEEEMIU-PORTAL**, a custom-built PHP MVC management system for 100+ active members.
+*   Architecting the **IEEEMIU-PORTAL**, a custom-built PHP MVC management system serving 100+ active users with automated grading, real-time dashboards, and certification workflows.
 *   Directing student-led hardware-software prototype development for university-wide technical competitions.
 *   **Arduino & Python Junior Program (Lead Mentor):** Delivered 20+ hours of hands-on technical training.
 
@@ -48,17 +48,17 @@ Product-focused **Systems Architect** and **AI Engineer** with a specialization 
 
 ### FEATURED PROJECTS
 
-**TALKY | High-Concurrency Distributed Messaging**  
+**TALKY | High-Concurrency Real-Time Messaging**  
 *C++, Node.js, Socket.io, React, Docker*
 *   Developed a hybrid messaging platform using a **C++ backend** for sub-millisecond message routing with real-time WebSocket state synchronization.
 
 **IEEEMIU-PORTAL | Enterprise Branch Management**  
 *PHP, MySQL, Vanilla CSS (Glassmorphism), JavaScript*
-*   Engineered a university portal featuring a Learning Management System (LMS) and member dashboards via reverse-engineering of university ecosystem needs.
+*   Engineered a university portal featuring a Learning Management System (LMS) and member dashboards, automating daily operations and serving 100+ active members.
 
 **GheitBot | AI-Powered Farming Assistant**  
-*Python, Streamlit, OpenWeather API, ML-based recommendation engine*
-*   Built an AI assistant providing real-time agricultural intelligence and optimal crop rotation schedules for Egyptian farmers.
+*Python, Scikit-Learn, Streamlit, OpenWeather API*
+*   Built an AI assistant using a Random Forest model trained on soil and climate data, providing optimal crop rotation schedules and real-time agricultural intelligence.
 
 ---
 
