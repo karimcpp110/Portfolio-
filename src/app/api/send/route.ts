@@ -3,7 +3,6 @@ import { config } from "@/data/config";
 import { Resend } from "resend";
 import { z } from "zod";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 const Email = z.object({
   fullName: z.string().min(2, "Full name is invalid!"),
@@ -14,6 +13,7 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
     console.log(body);
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const {
       success: zodSuccess,
       data: zodData,
