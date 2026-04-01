@@ -15,22 +15,52 @@ import SmoothScroll from "../smooth-scroll";
 import projects, { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
 import { SectionHeader } from "./section-header";
-
 import SectionWrapper from "../ui/section-wrapper";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
 
 const ProjectsSection = () => {
   return (
-    <SectionWrapper id="projects" className="max-w-7xl mx-auto md:h-[130vh]">
-      <SectionHeader id='projects' title="Projects" />
-      <div className="grid grid-cols-1 md:grid-cols-3">
-        {projects.map((project, index) => (
-          <Modall key={project.src} project={project} />
+    <SectionWrapper id="projects" className="max-w-7xl mx-auto min-h-screen py-32">
+      <SectionHeader id="projects" title="Projects" />
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4"
+      >
+        {projects.map((project) => (
+          <motion.div key={project.src} variants={itemVariants}>
+            <ProjectCard project={project} />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </SectionWrapper>
   );
 };
-const Modall = ({ project }: { project: Project }) => {
+const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <div className="flex items-center justify-center">
       <Modal>

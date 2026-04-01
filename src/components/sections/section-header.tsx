@@ -12,7 +12,7 @@ export const SectionHeader = ({ id, title, desc, className }: { id: string, titl
           <h2
             className={cn(
               "text-4xl text-center md:text-7xl font-bold",
-              "text-foreground"
+              "bg-clip-text text-transparent bg-gradient-to-b from-white to-zinc-500"
             )}
           >
             {title}
