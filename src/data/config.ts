@@ -35,7 +35,7 @@ const config = {
   },
   social: {
     linkedin: "https://www.linkedin.com/in/karim-wael-40132b360/",
-    instagram: "https://www.instagram.com/karim_wael_cpp/",
+    instagram: "https://www.instagram.com/kimo.cpp/",
     facebook: "",
     github: "https://github.com/karimcpp110",
   },
