@@ -2,7 +2,7 @@
 **Software Engineer | AI Systems**
 
 📧 [kwael7934@gmail.com](mailto:kwael7934@gmail.com) | 📱 01556330320 | 📍 Cairo, Egypt  
-🔗 [Portfolio](https://karimwael.dev) | [LinkedIn](https://www.linkedin.com/in/karim-wael-40132b360/) | [GitHub](https://github.com/karimcpp110)
+🔗 [Portfolio](https://karim-wael.vercel.app) | [LinkedIn](https://www.linkedin.com/in/karim-wael-40132b360/) | [GitHub](https://github.com/karimcpp110)
 
 ---
 

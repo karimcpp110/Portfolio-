@@ -24,7 +24,7 @@ const config = {
   author: "Karim Wael",
   email: "kwael7934@gmail.com",
   phone: "01556330320",
-  site: "https://karimwael.dev",
+  site: "https://karim-wael.vercel.app",
 
   // for github stars button
   githubUsername: "karimcpp110",
