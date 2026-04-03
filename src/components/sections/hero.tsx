@@ -75,12 +75,14 @@ const HeroSection = () => {
                 <BlurIn delay={1.2}>
                   <p
                     className={cn(
-                      "md:self-start md:mt-4 font-normal text-md whitespace-nowrap",
-                      "cursor-default font-display sm:text-xl md:text-2xl",
+                      "md:self-start md:mt-4 font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl",
                       "bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-500"
                     )}
                   >
-                    Software Engineer | AI Systems
+                    I build scalable web systems, not just websites.
+                  </p>
+                  <p className="md:self-start mt-2 text-sm md:text-base text-muted-foreground max-w-lg">
+                    Software Engineer & AI Specialist. Bridging high-performance C++ backends with premium React frontends and autonomous AI agents.
                   </p>
                 </BlurIn>
               </div>
@@ -99,22 +101,23 @@ const HeroSection = () => {
                     </BoxReveal>
                   </Link>
                 </Magnetic>
-                <div className="md:self-start flex gap-3">
-                  <Tooltip delayDuration={300}>
-                    <TooltipTrigger asChild>
-                      <Link href={"#contact"}>
-                        <Button
-                          variant={"outline"}
-                          className="block w-full overflow-hidden"
-                        >
-                          Hire Me
-                        </Button>
-                      </Link>
-                    </TooltipTrigger>
-                    <TooltipContent side="bottom">
-                      <p>pls 🥹 🙏</p>
-                    </TooltipContent>
-                  </Tooltip>
+                <div className="md:self-start flex flex-wrap gap-3">
+                  <Link href={"#projects"}>
+                    <Button
+                      variant={"default"}
+                      className="w-full md:w-auto px-8"
+                    >
+                      View Projects
+                    </Button>
+                  </Link>
+                  <Link href={"#contact"}>
+                    <Button
+                      variant={"outline"}
+                      className="w-full md:w-auto px-8"
+                    >
+                      Contact Me
+                    </Button>
+                  </Link>
                   <div className="flex items-center h-full gap-2">
                     <Magnetic>
                       <Link

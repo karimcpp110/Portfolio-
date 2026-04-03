@@ -10,6 +10,7 @@ import {
 } from "../ui/animated-modal";
 import { FloatingDock } from "../ui/floating-dock";
 import Link from "next/link";
+import { ArrowUpRight, Github } from "lucide-react";
 
 import SmoothScroll from "../smooth-scroll";
 import projects, { Project } from "@/data/projects";
@@ -76,10 +77,25 @@ const ProjectCard = ({ project }: { project: Project }) => {
               width={300}
               height={300}
             />
-            <div className="absolute w-full h-1/2 bottom-0 left-0 bg-gradient-to-t from-black via-black/85 to-transparent pointer-events-none">
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/90 to-transparent opacity-0 group-hover/modal-btn:opacity-100 transition-opacity duration-300">
+              <div className="flex flex-col h-full items-start justify-end p-6 space-y-2">
+                <div className="text-xl font-bold text-white">{project.title}</div>
+                <div className="text-xs font-mono text-zinc-400">
+                   PROBLEM: {project.problem || "N/A"}
+                </div>
+                <div className="text-xs font-mono text-blue-400">
+                   SOLUTION: {project.solution || "N/A"}
+                </div>
+                <div className="flex gap-3 pt-2">
+                   {project.github && <Github size={18} className="text-white hover:text-blue-400 transition-colors pointer-events-auto" onClick={(e) => { e.stopPropagation(); window.open(project.github, '_blank') }} />}
+                   {project.live && <ArrowUpRight size={18} className="text-white hover:text-blue-400 transition-colors pointer-events-auto" onClick={(e) => { e.stopPropagation(); window.open(project.live, '_blank') }} />}
+                </div>
+              </div>
+            </div>
+            <div className="absolute w-full h-1/3 bottom-0 left-0 bg-gradient-to-t from-black to-transparent group-hover/modal-btn:opacity-0 transition-opacity">
               <div className="flex flex-col h-full items-start justify-end p-6">
-                <div className="text-lg text-left">{project.title}</div>
-                <div className="text-xs bg-white text-black rounded-lg w-fit px-2">
+                <div className="text-lg font-bold">{project.title}</div>
+                <div className="text-xs bg-white text-black rounded-lg px-2 mt-1">
                   {project.category}
                 </div>
               </div>

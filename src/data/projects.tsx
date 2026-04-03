@@ -203,6 +203,8 @@ export type Project = {
   content: React.ReactNode | any;
   github?: string;
   live?: string;
+  problem?: string;
+  solution?: string;
 };
 
 const projects: Project[] = [
@@ -228,6 +230,8 @@ const projects: Project[] = [
     },
     live: "",
     github: "https://github.com/karimcpp110/whatsdown",
+    problem: "Real-time messaging often suffers from latency or poor security in custom implementations.",
+    solution: "Built a C++ backend with Socket.io for sub-millisecond routing and end-to-end encryption.",
     get content() {
       return (
         <div>
@@ -315,6 +319,8 @@ const projects: Project[] = [
       backend: [PROJECT_SKILLS.python, PROJECT_SKILLS.flask, PROJECT_SKILLS.docker],
     },
     live: "",
+    problem: "Security analysts are overwhelmed by high volumes of raw telemetry and manual triage tasks.",
+    solution: "Engineered an AI HUD with autonomous remediation that classifies threats and responds in real-time.",
     get content() {
       return (
         <div>
@@ -351,6 +357,8 @@ const projects: Project[] = [
     },
     live: "",
     github: "https://github.com/karimcpp110/ProbCast",
+    problem: "Event organizers lack localized, actionable environmental risk data from complex satellite datasets.",
+    solution: "Transformed NASA POWER API data into a simple probability forecast for global coordinates.",
     get content() {
       return (
         <div>
@@ -386,6 +394,8 @@ const projects: Project[] = [
     },
     live: "",
     github: "https://github.com/karimcpp110/ieee-miu",
+    problem: "University branch operations were manual, leading to grading delays and poor member engagement.",
+    solution: "Automated grading and management for 100+ users, centralizing all branch operations.",
     get content() {
       return (
         <div>
@@ -425,8 +435,9 @@ const projects: Project[] = [
         PROJECT_SKILLS.python,
       ],
     },
-    live: "",
     github: "https://github.com/karimcpp110/GheitBot",
+    problem: "Traditional farming in Egypt lacks real-time data on micro-climates and crop disease risk.",
+    solution: "Developed an AI assistant integrating satellite weather and soil data for precision farming advice.",
     get content() {
       return (
         <div>
