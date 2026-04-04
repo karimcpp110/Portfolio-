@@ -10,7 +10,7 @@ import AppOverlays from "@/components/app-overlays";
 import { Providers } from "@/components/providers";
 
 export const metadata: Metadata = {
-  title: config.title,
+  title: config.title, // v2 – Systems Engineer Edition
   description: config.description.long,
   keywords: config.keywords,
   authors: [{ name: config.author }],
