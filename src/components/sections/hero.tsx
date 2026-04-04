@@ -71,18 +71,17 @@ const HeroSection = () => {
                     </TooltipContent>
                   </Tooltip>
                 </BlurIn>
-                {/* <div className="md:block hidden bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0 w-screen h-px animate-fade-right animate-glow" /> */}
                 <BlurIn delay={1.2}>
                   <p
                     className={cn(
-                      "md:self-start md:mt-4 font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl",
+                      "md:self-start md:mt-4 font-bold text-xl sm:text-2xl md:text-3xl lg:text-3xl",
                       "bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-500"
                     )}
                   >
-                    I build scalable web systems, not just websites.
+                    Building Intelligent Systems & Real-Time Infrastructure
                   </p>
                   <p className="md:self-start mt-2 text-sm md:text-base text-muted-foreground max-w-lg">
-                    Software Engineer & AI Specialist. Bridging high-performance C++ backends with premium React frontends and autonomous AI agents.
+                    I design and engineer scalable systems across AI, cybersecurity, and high-performance applications.
                   </p>
                 </BlurIn>
               </div>
@@ -107,7 +106,7 @@ const HeroSection = () => {
                       variant={"default"}
                       className="w-full md:w-auto px-8"
                     >
-                      View Projects
+                      View My Work
                     </Button>
                   </Link>
                   <Link href={"#contact"}>

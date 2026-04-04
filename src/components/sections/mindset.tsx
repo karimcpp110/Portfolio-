@@ -11,9 +11,9 @@ const MindsetSection = () => {
     return (
         <SectionWrapper id="mindset" className="py-32 max-w-7xl mx-auto overflow-hidden">
             <SectionHeader 
-                id="mindset" 
-                title="Engineering Mindset" 
-                desc="How I approach complex systems and problem-solving."
+                id="how-i-think" 
+                title="How I Think" 
+                desc="My engineering philosophy."
             />
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-20 px-4">
@@ -37,19 +37,18 @@ const MindsetSection = () => {
                     viewport={{ once: true }}
                     className="flex flex-col justify-center order-1 lg:order-2"
                 >
-                    <h3 className="text-3xl font-bold mb-6 text-white tracking-tight">Scale, Reliability, and Speed.</h3>
+                    <h3 className="text-3xl font-bold mb-6 text-white tracking-tight">I don&apos;t just build applications.</h3>
                     <p className="text-zinc-400 leading-relaxed mb-8 text-lg">
-                        I don&apos;t just write code; I architect systems. My approach is centered on ensuring every 
-                        component is modular, every data pipeline is optimized, and every user interaction is 
-                        delightful. I prioritize sub-millisecond response times and sub-pixel accuracy.
+                        I design systems with control, performance, and security in mind. 
+                        I prefer local-first architectures, efficient backends, and real-time communication models.
                     </p>
 
                     <div className="space-y-4">
                         {[
-                            "Modular system design for high-performance scale.",
-                            "Security-first development from day zero.",
-                            "Autonomous AI integration for smarter operations.",
-                            "Meticulous attention to performance & sub-pixel UI polish."
+                            "Control & Autonomy: Minimal reliance on 3rd-party APIs.",
+                            "Performance: C++ and WebSockets for real-time speed.",
+                            "Security: Local architectures and ML-powered threat detection.",
+                            "Scalability: Dockerized microservices built to handle scale."
                         ].map((point, i) => (
                             <motion.div 
                                 key={i}

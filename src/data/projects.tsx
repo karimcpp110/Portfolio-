@@ -205,12 +205,17 @@ export type Project = {
   live?: string;
   problem?: string;
   solution?: string;
+  shortDescription?: string;
+  approach?: string;
+  architectureDesc?: string;
+  features?: string[];
+  impact?: string;
 };
 
 const projects: Project[] = [
   {
     id: "talky",
-    category: "Enterprise Messaging",
+    category: "Real-Time Systems",
     title: "TALKY",
     src: "/assets/projects-screenshots/talky/landing.png",
     screenshots: ["landing.png"],
@@ -230,8 +235,18 @@ const projects: Project[] = [
     },
     live: "",
     github: "https://github.com/karimcpp110/whatsdown",
-    problem: "Real-time messaging often suffers from latency or poor security in custom implementations.",
-    solution: "Built a C++ backend with Socket.io for sub-millisecond routing and end-to-end encryption.",
+    shortDescription: "High-performance messaging system built with React + C++ and WebSocket architecture.",
+    problem: "Real-time messaging often suffers from latency, poor security, and scaling bottlenecks in custom implementations. Connecting C++ raw performance with modern web UIs is notoriously difficult.",
+    solution: "Built a hybrid C++ backend with Socket.io for sub-millisecond routing and end-to-end encryption.",
+    approach: "Instead of relying on standard NodeJS for everything, I deployed a C++ server strictly for WebSocket routing to guarantee sub-millisecond latency. I bridged this high-performance core to a premium React frontend using Socket.io to maintain a modern, smooth UX without sacrificing backend speed.",
+    architectureDesc: "A modular microservices approach utilizing Docker. The core messaging engine runs on C++ while Node handles standard HTTP requests and REST authentication. State synchronization is managed real-time on the React frontend.",
+    features: [
+      "Sub-millisecond message routing via C++ WebSocket server",
+      "End-to-end encryption with custom protocol",
+      "Real-time state synchronization (typing, read receipts)",
+      "Dockerized microservice deployment"
+    ],
+    impact: "Created a scalable, enterprise-grade messaging prototype capable of handling high concurrency with zero perceived latency on the frontend.",
     get content() {
       return (
         <div>
@@ -266,7 +281,7 @@ const projects: Project[] = [
   },
   {
     id: "chiggabot",
-    category: "Local AI Agent",
+    category: "AI Infrastructure",
     title: "Chiggabot",
     src: "/assets/projects-screenshots/chiggabot/landing.png",
     screenshots: ["landing.png"],
@@ -279,6 +294,18 @@ const projects: Project[] = [
       ],
     },
     live: "",
+    shortDescription: "Fully local AI agent with RAG, code execution, and multi-language runtime.",
+    problem: "Cloud-based AI limits data privacy, requires expensive API subscriptions, and creates dangerous dependencies for enterprise codebase execution.",
+    solution: "Developed a 100% local, subscription-free AI agent powered by Ollama and RAG, avoiding all external API constraints.",
+    approach: "I wanted complete control over the AI environment. By deploying Ollama locally and writing a custom Python/Flask pipeline, I created a secure enclave where the model can execute code, fetch data, and perform RAG without any internet boundary issues.",
+    architectureDesc: "The core engine runs Python scripts evaluating LLM output via local Ollama wrappers. A React frontend communicates seamlessly with the local Flask server serving the RAG-augmented responses.",
+    features: [
+      "Local LLM inference via Ollama (Zero cost, infinite privacy)",
+      "Real-time web search integration via custom scraping pipeline",
+      "Unfiltered, personality-driven custom prompt engineering",
+      "Local code execution runtime for isolated script testing"
+    ],
+    impact: "Built a fully autonomous, cost-free intelligence tool that completely removes reliance on OpenAI and external constraints.",
     get content() {
       return (
         <div>
@@ -306,7 +333,7 @@ const projects: Project[] = [
   },
   {
     id: "soc-ai",
-    category: "Cybersecurity Platform",
+    category: "Cybersecurity",
     title: "SOC AI Command Center",
     src: "/assets/projects-screenshots/soc-ai/landing.png",
     screenshots: ["landing.png"],
@@ -319,8 +346,18 @@ const projects: Project[] = [
       backend: [PROJECT_SKILLS.python, PROJECT_SKILLS.flask, PROJECT_SKILLS.docker],
     },
     live: "",
-    problem: "Security analysts are overwhelmed by high volumes of raw telemetry and manual triage tasks.",
+    shortDescription: "ML-powered SOC platform achieving 99% threat detection accuracy.",
+    problem: "Security analysts are overwhelmed by high volumes of raw telemetry, leading to devastating response delays and manual triage fatigue.",
     solution: "Engineered an AI HUD with autonomous remediation that classifies threats and responds in real-time.",
+    approach: "I applied an engineering mindset to defense operations by leveraging Machine Learning directly on packet telemetry. Instead of just visualizing attacks, the system actively uses Random Forest models to intercept, classify, and isolate threats autonomously.",
+    architectureDesc: "Raw data feeds are continuously parsed and scored by a Python-based ML layer. Findings trigger autonomous containment protocols simulated via Docker, while the React/Tailwind HUD updates live state via WebSockets.",
+    features: [
+      "99% classification accuracy using Scikit-Learn Random Forest models",
+      "Autonomous 'Hyper-Drive' mode for zero-touch threat remediation",
+      "Real-time geographical tracking and network topology rendering",
+      "Automated incident forensics reporting"
+    ],
+    impact: "Transformed passive security monitoring into an active containment ecosystem, drastically reducing assumed mean-time-to-respond (MTTR).",
     get content() {
       return (
         <div>
@@ -384,7 +421,7 @@ const projects: Project[] = [
   },
   {
     id: "ieee-portal",
-    category: "Web Platform",
+    category: "Full-Stack Systems",
     title: "IEEE MIU Portal",
     src: "/assets/projects-screenshots/ieee-portal/landing.png",
     screenshots: ["landing.png"],
@@ -394,8 +431,18 @@ const projects: Project[] = [
     },
     live: "",
     github: "https://github.com/karimcpp110/ieee-miu",
-    problem: "University branch operations were manual, leading to grading delays and poor member engagement.",
-    solution: "Automated grading and management for 100+ users, centralizing all branch operations.",
+    shortDescription: "Rebuilt a university platform through reverse-engineered architecture and automation.",
+    problem: "IEEE MIU branch operations were bottlenecked by manual grading, fragmented data across Excel sheets, and low member engagement. The official university portal was overly restrictive.",
+    solution: "Automated grading and management for 100+ users, centralizing all branch operations in a familiar UI.",
+    approach: "I reverse-engineered the authentication flow and UI/UX of the existing university system to ensure zero learning curve. I selected a custom PHP MVC-lite architecture to keep deployment inexpensive, fast, and highly reliable on minimal hardware.",
+    architectureDesc: "A monolithic but clean PHP MVC backend handling SQL transactions mapped natively to a Vanilla CSS + JS frontend, ensuring rapid page loads and high compatibility.",
+    features: [
+      "Full LMS with course management and automated grading workflows",
+      "Role-based Access Control (RBAC) covering 100+ active members",
+      "Real-time analytics and attendance tracking via admin dashboard",
+      "Seamless UI replication of the official MIU environment"
+    ],
+    impact: "Centralized all branch operations into a single platform currently supporting and tracking the lifecycle of over 100 active members efficiently.",
     get content() {
       return (
         <div>

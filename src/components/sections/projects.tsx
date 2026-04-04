@@ -42,9 +42,14 @@ const itemVariants = {
 };
 
 const ProjectsSection = () => {
+  // Only select non-flagship projects
+  const otherProjects = projects.filter((p) =>
+    !["talky", "chiggabot", "soc-ai", "ieee-portal"].includes(p.id)
+  );
+
   return (
     <SectionWrapper id="projects" className="max-w-7xl mx-auto min-h-screen py-32">
-      <SectionHeader id="projects" title="Projects" />
+      <SectionHeader id="projects" title="Other Projects" />
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -52,7 +57,7 @@ const ProjectsSection = () => {
         viewport={{ once: true }}
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4"
       >
-        {projects.map((project) => (
+        {otherProjects.map((project) => (
           <motion.div key={project.src} variants={itemVariants}>
             <ProjectCard project={project} />
           </motion.div>

@@ -9,8 +9,8 @@ import ExperienceSection from "@/components/sections/experience";
 import ProjectsSection from "@/components/sections/projects";
 import ContactSection from "@/components/sections/contact";
 import HeroSection from "@/components/sections/hero";
-import CaseStudySection from "@/components/sections/case-study";
 import MindsetSection from "@/components/sections/mindset";
+import SelectedWorkSection from "@/components/sections/selected-work/selected-work";
 
 function MainPage() {
   return (
@@ -18,11 +18,12 @@ function MainPage() {
       <AnimatedBackground />
       <main className={cn("bg-slate-100 dark:bg-transparent canvas-overlay-mode")}>
         <HeroSection />
-        <SkillsSection />
-        <ProjectsSection />
-        <CaseStudySection />
-        <ExperienceSection />
+        <SelectedWorkSection />
         <MindsetSection />
+        <ExperienceSection />
+        {/* Skipping generic Skills grid here since we are focusing on hire-ready narrative */}
+        {/* <SkillsSection /> */}
+        <ProjectsSection />
         <ContactSection />
       </main>
     </SmoothScroll>
