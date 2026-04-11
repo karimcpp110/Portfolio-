@@ -18,7 +18,7 @@ export default function AppOverlays() {
       <EasterEggs />
       <ElasticCursor />
       <RadialMenu />
-      <TerminalDiagnostics />
+      <TerminalDiagnostics isOverlay={true} />
     </>
   );
 }

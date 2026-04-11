@@ -18,7 +18,7 @@ const DIAGNOSTIC_LOGS = [
   { text: "> R&D_STATUS: OPERATIONAL", type: "success" },
 ];
 
-export default function TerminalDiagnostics() {
+export default function TerminalDiagnostics({ isOverlay = false }: { isOverlay?: boolean }) {
   const [logs, setLogs] = useState<{ text: string; type: string }[]>([]);
   const indexRef = useRef(0);
 
@@ -33,7 +33,7 @@ export default function TerminalDiagnostics() {
 
   return (
     <motion.div
-      className="Terminal-diagnostics"
+      className={`Terminal-diagnostics ${isOverlay ? 'fixed-overlay' : ''}`}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 2, duration: 0.8 }}
