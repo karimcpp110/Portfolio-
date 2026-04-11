@@ -346,6 +346,7 @@ const projects: Project[] = [
       backend: [PROJECT_SKILLS.python, PROJECT_SKILLS.flask, PROJECT_SKILLS.docker],
     },
     live: "",
+    github: "https://github.com/karimcpp110/SOC_ANALYSIS_AI",
     shortDescription: "ML-powered SOC platform achieving 99% threat detection accuracy.",
     problem: "Security analysts are overwhelmed by high volumes of raw telemetry, leading to devastating response delays and manual triage fatigue.",
     solution: "Engineered an AI HUD with autonomous remediation that classifies threats and responds in real-time.",
@@ -370,7 +371,7 @@ const projects: Project[] = [
             autonomous workflow engine. Integrates scikit-learn ML models for
             anomaly detection and features a premium glassmorphism HUD interface.
           </TypographyP>
-          <ProjectsLinks />
+          <ProjectsLinks repo={this.github} />
           <TypographyH3 className="my-4 mt-8">Features</TypographyH3>
           <ul className="list-disc ml-6">
             <li className="font-mono">Real-time threat feed with ML-based severity scoring</li>
