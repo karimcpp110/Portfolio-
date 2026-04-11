@@ -234,7 +234,7 @@ const projects: Project[] = [
       ],
     },
     live: "",
-    github: "https://github.com/karimcpp110/whatsdown",
+    // github: "https://github.com/karimcpp110/whatsdown",
     shortDescription: "High-performance messaging system built with React + C++ and WebSocket architecture.",
     problem: "Real-time messaging often suffers from latency, poor security, and scaling bottlenecks in custom implementations. Connecting C++ raw performance with modern web UIs is notoriously difficult.",
     solution: "Built a hybrid C++ backend with Socket.io for sub-millisecond routing and end-to-end encryption.",
