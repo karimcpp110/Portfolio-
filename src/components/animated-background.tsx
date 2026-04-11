@@ -9,7 +9,7 @@ import { sleep } from "@/lib/utils";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { usePreloader } from "./preloader";
 import { useTheme } from "next-themes";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { Section, getKeyboardState } from "./animated-background-config";
 import { useSounds } from "./realtime/hooks/use-sounds";
 
@@ -34,6 +34,7 @@ const AnimatedBackground = () => {
 
   const [keyboardRevealed, setKeyboardRevealed] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
 
   // --- Event Handlers ---
 
@@ -418,12 +419,14 @@ const AnimatedBackground = () => {
 
   // Reveal keyboard on load/route change
   useEffect(() => {
-    const hash = activeSection === "hero" ? "#" : `#${activeSection}`;
-    router.push("/" + hash, { scroll: false });
+    if (pathname === "/") {
+      const hash = activeSection === "hero" ? "#" : `#${activeSection}`;
+      router.push("/" + hash, { scroll: false });
+    }
 
     if (!splineApp || isLoading || keyboardRevealed) return;
     updateKeyboardTransform();
-  }, [splineApp, isLoading, activeSection]);
+  }, [splineApp, isLoading, activeSection, pathname]);
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
