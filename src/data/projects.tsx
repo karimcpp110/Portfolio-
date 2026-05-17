@@ -511,5 +511,127 @@ const projects: Project[] = [
       );
     },
   },
+  {
+    id: "smartgen",
+    category: "Leadership & Education",
+    title: "SmartGen Championship 2026",
+    src: "/assets/projects-screenshots/smartgen/landing.png",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [PROJECT_SKILLS.arduino, PROJECT_SKILLS.cpp, PROJECT_SKILLS.python],
+      backend: [],
+    },
+    live: "",
+    shortDescription: "Participation Manager, TA Lead, Mentor, and Instructor for an intensive Robotics & AI competition.",
+    problem: "High-school students need practical, hands-on experience bridging academic learning with real-world robotics and AI applications.",
+    solution: "Organized and executed a comprehensive robotics championship, mentoring students from ideation to fully functioning projects.",
+    get content() {
+      return (
+        <div className="space-y-4 pb-10">
+          <TypographyP className="font-mono text-2xl text-center">
+            🙏 A Massive Thank-You to an Extraordinary Team 🙏
+          </TypographyP>
+          <TypographyP className="font-mono">
+            Looking back at SmartGen Championship 2026, I can confidently say it was one of the most rewarding and inspiring experiences I’ve ever been part of.
+          </TypographyP>
+          <TypographyP className="font-mono">
+            This intensive Robotics &amp; AI competition brought together passionate high-school students from grades 10 to 12, dedicated mentors, hardworking organizers, talented media teams, and an incredible faculty community — all united by innovation, collaboration, creativity, and the drive to build something impactful.
+          </TypographyP>
+          <TypographyP className="font-mono">
+            Throughout this journey, I had the honor of serving as a Participation Manager, TA Lead, Mentor, and Instructor, where I was responsible for coordinating participant engagement, managing logistics and communication, mentoring students, supporting teams throughout the competition, and helping ensure the smooth execution of the entire event.
+          </TypographyP>
+          <TypographyP className="font-mono">
+            Beyond the operational side, one of the most meaningful parts of the experience was being directly involved with students on both the technical and educational levels. I actively taught and explained robotics, AI, and programming concepts, guided students through technical challenges, followed up with teams and their projects, assisted them during development, and helped participants transform their ideas into real working solutions.
+          </TypographyP>
+          <TypographyP className="font-mono">
+            Watching students go from uncertainty to confidence, and from simple ideas to fully functioning projects, was honestly one of the most rewarding parts of the entire experience.
+          </TypographyP>
+          <TypographyP className="font-mono">
+            One of the highlights of this journey was participating in the school tours, where Zeiad Abo Gebba and I proudly represented the Computer Science faculty. During these visits, we introduced students to robotics, AI, programming, and the opportunities available within the CS field, while encouraging them to explore technology and innovation with confidence.
+          </TypographyP>
+          <TypographyP className="font-mono">
+            Seeing students become excited about learning, building projects, and exploring the world of technology reminded us why initiatives like SmartGen truly matter.
+          </TypographyP>
+          <TypographyP className="font-mono">
+            Inside the labs and throughout the competition days, the atmosphere was incredible. Every team brought creativity, determination, and passion to the event. Seeing students collaborate under pressure, solve real technical problems, and continuously improve their projects made every challenge worth it.
+          </TypographyP>
+          <TypographyP className="font-mono">
+            This experience was much bigger than just organizing a competition — it was about creating an environment where students felt motivated to learn, innovate, collaborate, and believe in their abilities.
+          </TypographyP>
+
+          <TypographyH3 className="my-4 mt-8">🌟 Special Thanks</TypographyH3>
+
+          <TypographyP className="font-mono font-bold mt-4 text-primary">🎓 Yassin Shendy</TypographyP>
+          <TypographyP className="font-mono">
+            Thank you for your leadership, trust, and continuous support throughout the competition. Your vision and belief in the team motivated all of us to push harder and deliver something truly meaningful.
+          </TypographyP>
+
+          <TypographyP className="font-mono font-bold mt-4 text-primary">🩺 The Doctors</TypographyP>
+          <TypographyP className="font-mono">
+            To all the doctors who attended, mentored, and judged the projects — thank you for sharing your expertise and helping bridge the gap between academic learning and real-world application. Your support and feedback elevated the quality of the competition and gave students an unforgettable learning experience.
+          </TypographyP>
+
+          <TypographyP className="font-mono font-bold mt-4 text-primary">👩‍🏫 TA Head &amp; TA Team</TypographyP>
+          <TypographyP className="font-mono">
+            A huge shout-out to Zeiad Abo Gebba for leading the TA team with dedication, professionalism, and nonstop effort throughout the competition.
+            <br/><br/>
+            And to every TA who prepared labs, answered questions, supported participants, solved problems, and worked tirelessly behind the scenes — thank you for being one of the strongest pillars of SmartGen 2026. Your patience, teamwork, energy, and commitment created an encouraging environment for every participant.
+          </TypographyP>
+
+          <TypographyP className="font-mono font-bold mt-4 text-primary">🏛️ Faculty &amp; Advisors</TypographyP>
+          <TypographyP className="font-mono">
+            Dr. Ayman Nabeel — thank you for attending, judging projects, and continuously supporting innovation, interdisciplinary learning, and student activities.
+            <br/><br/>
+            Khaled Hussin — your feedback and encouragement pushed students to think bigger, improve their work, and aim for higher-quality solutions.
+            <br/><br/>
+            Dr. Mehaseb Ahmed — thank you for your mentorship, guidance, and continuous support throughout the competition journey.
+            <br/><br/>
+            Ibrahim Lotfy — your effort, support, and contribution to the organization and smooth execution of the event were truly appreciated.
+          </TypographyP>
+
+          <TypographyP className="font-mono font-bold mt-4 text-primary">🎥 Media Team</TypographyP>
+          <TypographyP className="font-mono">
+            Special thanks to Farah Ahmed for leading the media coverage professionally and ensuring every important moment of SmartGen 2026 was captured perfectly.
+            <br/><br/>
+            And to the entire media team — thank you for your creativity, filming, editing, photography, coverage, and nonstop energy throughout the event. Your efforts helped showcase the spirit, hard work, and success of the championship to the entire community.
+          </TypographyP>
+
+          <TypographyP className="font-mono font-bold mt-4 text-primary">🤝 Misr International University &amp; IEEE MIU</TypographyP>
+          <TypographyP className="font-mono">
+            Thank you for providing the environment, resources, and support that made SmartGen Championship 2026 possible.
+            <br/><br/>
+            And to IEEE MIU — I’m truly grateful for the trust you placed in me as Participation Manager, TA Lead, Mentor, and Instructor. It was an honor to contribute to an event that empowered students to explore robotics, AI, teamwork, leadership, and innovation in such a meaningful way.
+          </TypographyP>
+
+          <TypographyH3 className="my-4 mt-8">📊 Highlights I’m Proud Of</TypographyH3>
+          <ul className="list-disc ml-6 space-y-2">
+            <li className="font-mono">Coordinated participant engagement, logistics, communication, and overall workflow throughout the competition lifecycle.</li>
+            <li className="font-mono">Served as a mentor and instructor during SmartGen Championship 2026, teaching and explaining robotics, AI, and technical concepts to participating students.</li>
+            <li className="font-mono">Guided teams through technical challenges and helped transform ideas into real working projects.</li>
+            <li className="font-mono">Followed up closely with participating teams to ensure continuous progress, collaboration, and effective project execution.</li>
+            <li className="font-mono">Represented the Computer Science faculty during school tours alongside Zeiad Abo Gebba, introducing students to robotics, AI, programming, and the SmartGen experience.</li>
+            <li className="font-mono">Helped create a supportive and motivating environment where students could confidently learn, innovate, collaborate, and compete.</li>
+            <li className="font-mono">Contributed to building an organized workflow between technical, logistics, mentoring, and media teams to ensure smooth event execution.</li>
+          </ul>
+
+          <TypographyH3 className="my-4 mt-8">🚀 Looking Forward</TypographyH3>
+          <TypographyP className="font-mono">
+            This experience reinforced something important: impactful events are never built by individuals alone — they are built by teams driven by passion, trust, collaboration, and a shared purpose.
+          </TypographyP>
+          <TypographyP className="font-mono">
+            I’m incredibly proud of everything we achieved together, and I’m excited for what’s next. I hope we continue creating opportunities that empower students, encourage innovation, strengthen leadership, and connect education with real-world technology and problem-solving.
+          </TypographyP>
+          <TypographyP className="font-mono">
+            Thank you again to everyone who contributed to making SmartGen Championship 2026 such a memorable and impactful experience.
+            <br/><br/>
+            Together, you set a great example of teamwork, mentorship, dedication, leadership, and excellence. 🌟
+          </TypographyP>
+          <TypographyP className="font-mono text-sm opacity-70 mt-8 mb-4">
+            #SmartGen2026 #Leadership #Robotics #AI #Teamwork #TeachingAssistants #ParticipationManagement #IEEE #MIU #Innovation #HighSchoolStudents #StudentActivities #SchoolTours #ComputerScience #Education #Mentorship #Technology #Gratitude
+          </TypographyP>
+        </div>
+      );
+    },
+  },
 ];
 export default projects;
