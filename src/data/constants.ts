@@ -274,13 +274,14 @@ export const EXPERIENCE: Experience[] = [
     id: 1,
     startDate: "Sep 2025",
     endDate: "Present",
-    title: "R&D Co-Head",
+    title: "R&D Co-Head & Web Developer",
     company: "IEEE MIU Student Branch",
     description: [
       "Co-heading Research & Development initiatives for the IEEE student branch.",
       "Awarded a Certificate of Appreciation for serving as a Course Assistant in the Arduino & Python Junior Program.",
       "Delivered 20+ hours of training over one month, guiding junior students through hands-on robotics and problem-solving.",
       "Spearheading the development of the IEEE MIU digital portal (IEEEMIU-PORTAL).",
+      "Served as Participation Manager, TA Lead, Mentor, and Instructor for the SmartGen Championship 2026.",
     ],
     skills: [
       SkillNames.REACT,
